@@ -2,6 +2,7 @@
 bin
 obj
 *.suo
+Ifkam.Dictionary/Ifkam.Dictionary.sln.DotSettings.user
 
 # mstest test results
 TestResults
