@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Ifkam.Dictionary.ViewModels;
+using NUnit.Framework;
 
 namespace Ifkam.Viewmodels.Tests
 {

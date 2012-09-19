@@ -8,5 +8,9 @@
 #
 
 Word.transaction do
-  Word.create([{name: 'word1', definition: 'the first word ever created'}, {name: 'word2', definition: 'the second word created'}])
+  Word.create([{name: 'word1', definition: 'the first word ever created'}, {name: 'word2', definition: 'the second word created'}, 
+              {
+    name: 'reach_rails',
+    definition: 'Hello from rails'
+  }])
 end
