@@ -11,14 +11,19 @@ namespace Ifkam.Viewmodels.Tests
             //Arrange
             var mainPageViewModel = new MainPageViewModel
                                         {
-                                            Word = "look_me_up",
+                                            Word = "word1",
                                             Definition = string.Empty
                                         };
             //Act
             mainPageViewModel.Lookup.Execute(null);
+            var resultOfFirstLookup = mainPageViewModel.Definition;
+            mainPageViewModel.Word = "word2";
+            mainPageViewModel.Lookup.Execute(null);
+            var resultOfSecondLookup = mainPageViewModel.Definition;
 
             //Assert
-            Assert.IsNotNullOrEmpty(mainPageViewModel.Definition);
+            Assert.IsNotNullOrEmpty(resultOfFirstLookup);
+            Assert.AreNotEqual(resultOfFirstLookup, resultOfSecondLookup);
 
         }
     }
