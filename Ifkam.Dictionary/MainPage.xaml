@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type word to look up" VerticalAlignment="Top" Margin="106,534,0,0" Width="194"/>
+        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="328,203,0,0" TextWrapping="Wrap" Text="A looked up word will be in here." VerticalAlignment="Top" Height="446" Width="254"/>
+        <Button Content="Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="106,571,0,0" Width="194" />
 
     </Grid>
 </Page>
