@@ -10,6 +10,12 @@ class WordsController < ApplicationController
     end
   end
 
+  def search
+    query = params[:q]
+    render json: Word.where("name like '%#{query}%'")#For demo purposes only, this is vulnerable to SQL injection.
+  end
+  #TODO: put a Picard facepalm ascii art here.
+
   # GET /words/1
   # GET /words/1.json
   def show
