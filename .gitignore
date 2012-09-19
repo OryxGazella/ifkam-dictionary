@@ -5,3 +5,7 @@ obj
 
 # mstest test results
 TestResults
+
+# Resharper
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
