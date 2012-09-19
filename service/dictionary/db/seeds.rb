@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+Word.transaction do
+  Word.create([{name: 'word1', definition: 'the first word ever created'}, {name: 'word2', definition: 'the second word created'}])
+end
