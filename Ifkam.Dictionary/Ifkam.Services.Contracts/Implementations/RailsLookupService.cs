@@ -10,13 +10,20 @@ namespace Ifkam.Services.Contracts.Implementations
         public async Task<string> Lookup(string word)
         {
             var client = new HttpClient();
-            var response = await client.GetAsync(string.Format("http://localhost:3000/api/words?q={0}", word));
+            try
+            {
+                var response = await client.GetAsync(string.Format("http://localhost:3000/api/words?q={0}", word));
 
-            var serializer = new DataContractJsonSerializer(typeof(Word));
-            var jsonstr = await response.Content.ReadAsStreamAsync();
-            var deserialisedWord = (Word)serializer.ReadObject(jsonstr);
+                var serializer = new DataContractJsonSerializer(typeof(Word));
+                var jsonstr = await response.Content.ReadAsStreamAsync();
+                var deserialisedWord = (Word)serializer.ReadObject(jsonstr);
 
-            return deserialisedWord.definition ?? "Sorry, boet. No definition was found.";
+                return deserialisedWord.definition ?? "Sorry, boet. No definition was found.";
+            }
+            finally
+            {
+                client.Dispose();
+            }
         }
     }
     [DataContract]
