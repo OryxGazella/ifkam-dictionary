@@ -13,7 +13,9 @@ class WordsController < ApplicationController
   # GET /api/words?q<optional>
   def search
     query = params[:q]
-    render json: Word.where("name like '%#{query}%'")[0]#For demo purposes only, this is vulnerable to SQL injection.
+    output = Word.where("name like '%#{query}%'")[0]#For demo purposes only, this is vulnerable to SQL injection.
+    output ||= Word.new(:name => ":=(", :definition => "Sorry, boet, #{query} is not defined in this dictionary.")
+    render json: output
   end
   #............................................________ 
   #....................................,.-'"...................``~., 

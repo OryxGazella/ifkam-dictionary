@@ -1,4 +1,5 @@
-﻿using Ifkam.Services.Contracts.Implementations;
+﻿using System.Threading.Tasks;
+using Ifkam.Services.Contracts.Implementations;
 using NUnit.Framework;
 
 namespace Ifkam.Services.Tests
@@ -37,6 +38,7 @@ namespace Ifkam.Services.Tests
     public class RailsLookupServiceTests
     {
         private const string ReachedRailsText = "Hello from rails";
+        private const string NotFoundText = "Sorry, boet, {0} is not defined in this dictionary.";
         //TODO: MOCK THIS OUT!!!!!!!, this is not a unit test any more,
         //rather make a spy to see that HTTP is being called.
         //Obligatory facepalm...
@@ -74,6 +76,22 @@ namespace Ifkam.Services.Tests
 
             //Assert
             Assert.AreEqual(ReachedRailsText, result.Result);
+        }
+
+        [Test]
+        public void ShouldNotFreakOutWhenItCantLookUpAWord()
+        {
+            //Arrange
+            var service = new RailsLookupService();
+            var word = "this_word_is_almost_guaranteed_not_to_exist_if_only_I_had_mocks_and_stuff_reach";
+            //Act
+            Task<string> lookup = service.Lookup(word);
+            var result = lookup;
+
+
+            //Assert
+            Assert.AreEqual(string.Format(NotFoundText, word), result.Result);
+
         }
     }
 
