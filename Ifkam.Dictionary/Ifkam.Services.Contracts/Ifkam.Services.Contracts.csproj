@@ -36,7 +36,6 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\LocalLookupService.cs" />
     <Compile Include="ILookupService.cs" />
     <Compile Include="Implementations\RailsLookupService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

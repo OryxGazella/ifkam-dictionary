@@ -1,5 +1,4 @@
 ﻿using Ifkam.Dictionary.ViewModels;
-using Ifkam.Services.Contracts.Implementations;
 using NUnit.Framework;
 
 namespace Ifkam.Viewmodels.Tests
