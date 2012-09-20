@@ -12,9 +12,23 @@
             <RowDefinition Height="497*"/>
             <RowDefinition Height="271*"/>
         </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Word, Mode=TwoWay}" VerticalAlignment="Top" Margin="106,36.985,0,0" Width="194" Grid.Row="1"/>
-        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="328,203,0,0" TextWrapping="Wrap" Text="{Binding Definition}" VerticalAlignment="Top" Height="446" Width="254" Grid.RowSpan="2"/>
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Word, Mode=TwoWay}" VerticalAlignment="Top" Margin="370,230,0,0" Width="186" Height="144"/>
+        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="121.382,225.762,0,0" TextWrapping="Wrap" Text="{Binding Definition}" VerticalAlignment="Top" Height="216.711" Width="151.272" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="-45"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
         <Button Command="{Binding Lookup}" Content="Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="106,73.985,0,0" Width="194" Grid.Row="1" />
+        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="231.639,74.375,0,0" TextWrapping="Wrap" Text="{Binding Definition}" VerticalAlignment="Top" Height="226.414" Width="182.422" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="45"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="282.386,322.136,0,0" TextWrapping="Wrap" Text="{Binding Definition}" VerticalAlignment="Top" Height="226.414" Width="182.422" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="2">
+            <TextBlock.RenderTransform>
+                <CompositeTransform Rotation="225"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
 
     </Grid>
 </Page>
