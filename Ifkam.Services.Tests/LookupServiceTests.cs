@@ -4,35 +4,7 @@ using NUnit.Framework;
 
 namespace Ifkam.Services.Tests
 {
-    [TestFixture]
-    public class LookupServiceTests
-    {
-        private const string NotFoundText = "this word you speak of I have not found";
-
-
-        [Test]
-        public void ShouldLookupAWord()
-        {
-            //Arrange
-            var service = new LocalLookupService();
-            //Act
-            var result = service.Lookup("word1");
-            //Assert  
-            Assert.AreEqual("nice word", result.Result);
-        }
-
-        [Test]
-        public void ShouldTellYouWhenAWordCannotBeFound()
-        {
-            //Arrange
-            var service = new LocalLookupService();
-            //Act
-            var result =  service.Lookup("I do not exist");
-            //Assert  
-            Assert.AreEqual(NotFoundText, result.Result); 
-        }
-        
-    }
+    
 
     [TestFixture]
     public class RailsLookupServiceTests

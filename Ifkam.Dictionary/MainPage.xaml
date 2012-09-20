@@ -12,9 +12,9 @@
             <RowDefinition Height="497*"/>
             <RowDefinition Height="271*"/>
         </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type word to look up" VerticalAlignment="Top" Margin="106,36.985,0,0" Width="194" Grid.Row="1"/>
-        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="328,203,0,0" TextWrapping="Wrap" Text="A looked up word will be in here." VerticalAlignment="Top" Height="446" Width="254" Grid.RowSpan="2"/>
-        <Button Content="Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="106,73.985,0,0" Width="194" Grid.Row="1" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Word, Mode=TwoWay}" VerticalAlignment="Top" Margin="106,36.985,0,0" Width="194" Grid.Row="1"/>
+        <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="328,203,0,0" TextWrapping="Wrap" Text="{Binding Definition}" VerticalAlignment="Top" Height="446" Width="254" Grid.RowSpan="2"/>
+        <Button Command="{Binding Lookup}" Content="Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="106,73.985,0,0" Width="194" Grid.Row="1" />
 
     </Grid>
 </Page>

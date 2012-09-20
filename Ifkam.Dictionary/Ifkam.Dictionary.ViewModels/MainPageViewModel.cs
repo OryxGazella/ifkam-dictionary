@@ -1,11 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Input;
 using Ifkam.Services.Contracts;
 using Ifkam.Services.Contracts.Implementations;
 
 namespace Ifkam.Dictionary.ViewModels
 {
-    public class MainPageViewModel
+    public class MainPageViewModel : INotifyPropertyChanged
     {
         
        
@@ -16,7 +17,7 @@ namespace Ifkam.Dictionary.ViewModels
         }
         private string _word;
         private string _definition;
-        private readonly ILookupService _service = new LocalLookupService();
+        internal ILookupService _service = new RailsLookupService();
 
         public string Word
         {
@@ -27,10 +28,19 @@ namespace Ifkam.Dictionary.ViewModels
         public string Definition
         {
             get { return _definition; }
-            set { _definition = value; }
+            set { _definition = value; 
+                OnPropertyChanged("Definition");
+            }
         }
 
         public ICommand Lookup { get; private set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 
 
