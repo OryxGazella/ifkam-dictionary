@@ -6,18 +6,18 @@ using Ifkam.Services.Contracts.Implementations;
 
 namespace Ifkam.Dictionary.ViewModels
 {
-    public class MainPageViewModel : INotifyPropertyChanged
+    public sealed class MainPageViewModel : INotifyPropertyChanged
     {
         
        
 
         public MainPageViewModel()
         {
-            Lookup = new DelegateCommand(async ()=> Definition = await _service.Lookup(Word));
+            Lookup = new DelegateCommand(async ()=> Definition = await Service.Lookup(Word));
         }
         private string _word;
         private string _definition;
-        internal ILookupService _service = new RailsLookupService();
+        internal ILookupService Service = new RailsLookupService();
 
         public string Word
         {
@@ -36,7 +36,7 @@ namespace Ifkam.Dictionary.ViewModels
         public ICommand Lookup { get; private set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));

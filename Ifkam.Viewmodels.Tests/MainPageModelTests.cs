@@ -16,7 +16,7 @@ namespace Ifkam.Viewmodels.Tests
                                         {
                                             Word = "I do not exist",
                                             Definition = string.Empty,
-                                            _service = new LocalLookupService()
+                                            Service = new LocalLookupService()
                                         };
             
             //Act
@@ -35,7 +35,7 @@ namespace Ifkam.Viewmodels.Tests
                                             Word = "word1",
                                             Definition = string.Empty
                                         };
-            mainPageViewModel._service = new LocalLookupService();
+            mainPageViewModel.Service = new LocalLookupService();
             //Act
             mainPageViewModel.Lookup.Execute(null);
             
